@@ -4,37 +4,39 @@ def main():
     suma = addmultiplenumbers([5, 7, 9])
     producto = multiplymultiplenumbers([5, 7, 4,3])
 
-   
+    # Convertir a entero si el resultado es un número entero representado como float
     if isinstance(suma, float) and suma.is_integer():
         suma = int(suma)
-
+    
     if isinstance(producto, float) and producto.is_integer():
         producto = int(producto)
 
+
+    # Imprimir los resultados
     print("La Suma es:", suma)
     print("La Multiplicación es:", producto)
     print("¿4 es par?", isiteven(4))
     print("¿6.5 es entero?", isitaninteger(6.5))
 
-
+# Funciones de la suma
 def addmultiplenumbers(numbers):
     total = 0
     for num in numbers:
         total += num
     return total
 
-
+# Funciones de la multiplicación
 def multiplymultiplenumbers(numbers):
     result = 1
     for num in numbers:
         result *= num
     return result
 
-
+# Funciones para verificar si un número es par o entero
 def isitaninteger(num):
     return isinstance(num, int) or (isinstance(num, float) and num.is_integer())
 
-
+# Función para verificar si un número es par
 def isiteven(num):
     return isitaninteger(num) and int(num) % 2 == 0
 
